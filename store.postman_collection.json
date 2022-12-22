@@ -1,0 +1,680 @@
+{
+	"info": {
+		"_postman_id": "e92e8cf6-aaea-47a6-b5f3-85d538dc0be8",
+		"name": "store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19620570"
+	},
+	"item": [
+		{
+			"name": "vendor",
+			"item": [
+				{
+					"name": "regester",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "vendor",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "vendor@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "store_name",
+									"value": "first store",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "first store des",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "31.512243",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "34.445110",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}register/vendor",
+							"host": [
+								"{{URL}}register"
+							],
+							"path": [
+								"vendor"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "vendor@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}login",
+							"host": [
+								"{{URL}}login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user this api to insert items to db",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|NJk4GX7T4hvqFaDi3kzSkMqcHjGWP2q29AYowBR3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}insetItems",
+							"host": [
+								"{{URL}}insetItems"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "custmer",
+			"item": [
+				{
+					"name": "regester customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "customer",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "2",
+									"description": "role 2 for customer",
+									"type": "text"
+								},
+								{
+									"key": "store_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "customer@gmailcom",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}register",
+							"host": [
+								"{{URL}}register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "customer3@gmailcom",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}login",
+							"host": [
+								"{{URL}}login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "make order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|xYHUk1cULtfCdCCiqkaM2XOmEC9MdBzjmY47Iznj",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "items[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "31.510778",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "34.458839",
+									"type": "text"
+								},
+								{
+									"key": "items[1]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "items[2]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "items[3]",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}make-order",
+							"host": [
+								"{{URL}}make-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "14|KHOWAWATOc4umbkVsjUe0kvYiqUBMFQ3AOUSdbmQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}customer-orders",
+							"host": [
+								"{{URL}}customer-orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|xYHUk1cULtfCdCCiqkaM2XOmEC9MdBzjmY47Iznj",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}stores",
+							"host": [
+								"{{URL}}stores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|xYHUk1cULtfCdCCiqkaM2XOmEC9MdBzjmY47Iznj",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}items?store_id=1",
+							"host": [
+								"{{URL}}items"
+							],
+							"query": [
+								{
+									"key": "store_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "delivery",
+			"item": [
+				{
+					"name": "delivery-order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|1hGeAc9kFMcgsQKzi3AvyJvSx5vvcJXVBTR3Gwy6",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}delivery-order?order_id=2",
+							"host": [
+								"{{URL}}delivery-order"
+							],
+							"query": [
+								{
+									"key": "order_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delivery get order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|1hGeAc9kFMcgsQKzi3AvyJvSx5vvcJXVBTR3Gwy6",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "order_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}get-order",
+							"host": [
+								"{{URL}}get-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "regester",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "delivery",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "3",
+									"description": "role 3 for delivery",
+									"type": "text"
+								},
+								{
+									"key": "store_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "delivery@gmailcom",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}register",
+							"host": [
+								"{{URL}}register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "delivery3@gmailcom",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}login",
+							"host": [
+								"{{URL}}login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get orders need delivery",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|1hGeAc9kFMcgsQKzi3AvyJvSx5vvcJXVBTR3Gwy6",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}allOrder",
+							"host": [
+								"{{URL}}allOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|1hGeAc9kFMcgsQKzi3AvyJvSx5vvcJXVBTR3Gwy6",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}myOrders",
+							"host": [
+								"{{URL}}myOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "wallet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|1hGeAc9kFMcgsQKzi3AvyJvSx5vvcJXVBTR3Gwy6",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}wallet",
+							"host": [
+								"{{URL}}wallet"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "127.0.0.1:8000/api/",
+			"type": "string"
+		}
+	]
+}
